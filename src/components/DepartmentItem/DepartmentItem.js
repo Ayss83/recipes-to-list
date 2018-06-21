@@ -4,7 +4,7 @@ import * as React from "react";
 import {connect} from 'react-redux';
 import actionTypes from "../../store/actionTypes";
 
-const DepartmentItem = props => {
+export const DepartmentItem = props => {
   
   const removeIngredient = (ingredientName: string) => {
     if(window.confirm('Are you sure you want to remove this ingredient? (This action can\'t be undone)')) {

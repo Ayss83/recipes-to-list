@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import DepartmentItem from "../../components/DepartmentItem/DepartmentItem";
 
-class ShoppingList extends React.Component {
+export class ShoppingList extends React.Component {
   state = {
     categories: []
   };

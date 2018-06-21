@@ -25,14 +25,15 @@ type Props = {
 
 const RecipeItem = (props: Props) => (
   <Link to={"/recipes/" + props.recipe.recipe_id}>
-    <div className="card">
-      <div className="card-title">
+    <div className="card recipe-card">
+      <div className="card-title recipe-card-title">
         <h5>{props.recipe.title}</h5>
       </div>
       <div className="card-body">
         <img
           src={"/images/" + props.recipe.image_name}
           alt={props.recipe.title}
+          className="rounded shadow"
         />
       </div>
     </div>

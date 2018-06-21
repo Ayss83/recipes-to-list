@@ -5,8 +5,8 @@ import "./Navbar.css";
 
 const Navbar = () => (
   <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-    <Link to="/" className="navbar-brand">
-      <img src="/images/logo.png" alt="logo" />
+    <Link to="/recipes" className="navbar-brand">
+      <img className="logo" src="/images/logo.png" alt="logo" />
     </Link>
     <button className="navbar-toggler" data-toggle="collapse" data-target="#collapsedNav" aria-controls="collapsedNav" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
     <div className="collapse navbar-collapse" id="collapsedNav">

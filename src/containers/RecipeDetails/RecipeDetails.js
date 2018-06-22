@@ -24,7 +24,7 @@ type State = {
   recipeFound: boolean
 };
 
-class RecipeDetails extends React.Component<Props, State> {
+export class RecipeDetails extends React.Component<Props, State> {
   state = {
     recipesList: [],
     recipe: {

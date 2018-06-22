@@ -3,7 +3,7 @@ import * as React from 'react';
 import RecipeItem from '../../components/RecipeItem/RecipeItem';
 import recipes from '../../recipes/recipes';
 
-class RecipesList extends React.Component {
+export class RecipesList extends React.Component {
   state = {
     recipes: recipes
   }

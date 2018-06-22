@@ -2,6 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 
 import DepartmentItem from "../../components/DepartmentItem/DepartmentItem";
+import actionTypes from "../../store/actionTypes";
 
 export class ShoppingList extends React.Component {
   state = {
@@ -22,6 +23,7 @@ export class ShoppingList extends React.Component {
     }
   }
 
+  // Récupération des catégories de produits depuis la liste d'ingrédient, conservation d'une seule instance de chaque et tri alphabétique
   sortCategories = () => {
     return this.props.ingredients
       .map(ingredient => ingredient.department)
@@ -37,7 +39,7 @@ export class ShoppingList extends React.Component {
         </div>
         {this.state.categories.length > 0 ? (
           this.state.categories.map(category => (
-            <DepartmentItem key={category} departmentName={category} ingredientList={this.props.ingredients} />
+            <DepartmentItem key={category} onIngredientRemove={this.props.onIngredientRemove} departmentName={category} ingredientList={this.props.ingredients} />
           ))
         ) : (
           <p>Your Shopping list is empty</p>
@@ -53,4 +55,14 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(ShoppingList);
+const mapDispatchToProps = dispatch => {
+  return {
+    onIngredientRemove: (ingredientName: string) =>
+      dispatch({
+        type: actionTypes.REMOVE_INGREDIENT,
+        payload: {ingredientToRemove: ingredientName}
+      })
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShoppingList);

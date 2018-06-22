@@ -1,8 +1,6 @@
 // @flow
 
 import * as React from "react";
-import {connect} from 'react-redux';
-import actionTypes from "../../store/actionTypes";
 
 export const DepartmentItem = props => {
   
@@ -33,7 +31,7 @@ export const DepartmentItem = props => {
                       ? "pcs"
                       : "pc"
                   : null}
-                  <span onClick={() => removeIngredient(ingredient.name)}><i className="fas fa-trash text-danger float-right" /></span>
+                  <span onClick={() => removeIngredient(ingredient.name)}><i className="fas fa-trash text-danger float-right btn" /></span>
               </li>
             ) : null
         )}
@@ -42,15 +40,4 @@ export const DepartmentItem = props => {
   )
 };
 
-
-const mapDispatchToProps = dispatch => {
-  return {
-    onIngredientRemove: (ingredientName: string) =>
-      dispatch({
-        type: actionTypes.REMOVE_INGREDIENT,
-        payload: {ingredientToRemove: ingredientName}
-      })
-  }
-}
-
-export default connect(null, mapDispatchToProps)(DepartmentItem);
+export default DepartmentItem;
